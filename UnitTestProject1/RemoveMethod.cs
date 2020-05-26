@@ -28,21 +28,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        [TestMethod]
-        public void Remove_RemoveOnlyItemFromList_ItemAtFirstIndexShouldBe0()
-        {
-            CustomList<int> customList = new CustomList<int>();
-            int expected = 0;
-            int actual;
-
-            //Act
-            customList.Add(3);
-            customList.Remove(3);
-            actual = customList[0];
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+       
         [TestMethod]
         public void Remove_RemoveItemFromList_ReturnEqualTrue()
         {
@@ -72,7 +58,7 @@ namespace UnitTestProject1
             customList.Add(4);
             customList.Remove(3);
 
-            actual = customList[3];
+            actual = customList[2];
 
 
             //Assert
@@ -108,6 +94,25 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
-      
+        [TestMethod]
+        public void Remove_RemoveSecondItemFromListOfFourItems_Index1Equal3()
+        {
+            CustomList<int> customList = new CustomList<int>();
+            int expected = 3;
+            int actual;
+
+            //Act
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
+            customList.Add(4);
+            customList.Remove(3);
+
+            actual = customList[1];
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
