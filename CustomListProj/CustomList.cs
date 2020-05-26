@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace CustomListProj
 {
-    class CustomList
+    public class  CustomList<T>
     {
+       
+        private T[] items = new T[4];
+        private int count = 0;
+        private int capacity;
+        public void Add(T item)
+        {
+
+
+        }
+
     }
 }
