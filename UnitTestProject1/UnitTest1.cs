@@ -89,7 +89,7 @@ namespace UnitTestProject1
         public void Add_AddFiveItems_CheckIfFithItemWasAdded()
         {
             CustomList<int> customList = new CustomList<int>();
-            int expected = 4;
+            int expected = 7;
             int actual;
 
             //Act
