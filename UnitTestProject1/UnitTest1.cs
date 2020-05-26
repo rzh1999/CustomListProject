@@ -45,6 +45,26 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
+        public void Add_AddFiveItems_CountShouldEqualFive()
+        {
+            //Arrange
+
+            CustomList<int> customList = new CustomList<int>();
+            int expected = 5;
+            int actual;
+
+            //Act
+            customList.Add(3);
+            customList.Add(4);
+            customList.Add(5);
+            customList.Add(6);
+            customList.Add(7);
+
+            actual = customList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
        
 
     }
