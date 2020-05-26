@@ -78,5 +78,36 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Remove_RemoveItemFromEmptyList_ReturnFalse()
+        {
+            CustomList<int> customList = new CustomList<int>();
+            bool expected = false;
+            int actual;
+
+            //Act
+           
+            actual = customList.Remove(3);
+            
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_RemoveItemNotInList_ReturnFalse()
+        {
+            CustomList<int> customList = new CustomList<int>();
+            bool expected = false;
+            int actual;
+
+            //Act
+            customList.Add(5);
+            actual = customList.Remove(3);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+      
     }
 }
