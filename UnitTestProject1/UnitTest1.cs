@@ -65,7 +65,24 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
-       
 
+        public void Add_AddTwoItemsCheckIfSecondItemIsAtEnd_SecondItemAddedShouldBeAtEndOfArray()
+        {
+            //Arrange
+
+            CustomList<int> customList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            //Act
+            customList.Add(3);
+            customList.Add(4);
+
+
+            actual = customList[1];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
