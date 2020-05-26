@@ -98,7 +98,7 @@ namespace UnitTestProject1
         public void Remove_RemoveSecondItemFromListOfFourItems_Index1Equal3()
         {
             CustomList<int> customList = new CustomList<int>();
-            int expected = 3;
+            int expected = 4;
             int actual;
 
             //Act
@@ -106,9 +106,9 @@ namespace UnitTestProject1
             customList.Add(2);
             customList.Add(3);
             customList.Add(4);
-            customList.Remove(3);
+            customList.Remove(2);
 
-            actual = customList[1];
+            actual = customList[2];
 
 
             //Assert
