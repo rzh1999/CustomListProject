@@ -7,17 +7,9 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
-        public class UserName
-        {
-            public string name;
-
-            public UserName()
-            {
-                name = "Bill";
-            }
-        }
+       
         [TestMethod]
-        public void AddToList_AddOneItem_ConatainItem()
+        public void Add_AddOneItem_ConatainItemInPosition0()
         {
             //Arrange
             
@@ -33,5 +25,27 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Add_AddTwoItemsGetCount_CountShouldEqualTwo()
+        {
+            //Arrange
+
+            CustomList<int> customList = new CustomList<int>();
+            int expected = 2;
+            int actual;
+
+            //Act
+            customList.Add(3);
+            customList.Add(4);
+
+            actual = customList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+       
+
     }
 }
