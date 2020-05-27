@@ -10,7 +10,7 @@ using CustomListProj;
 namespace UnitTestProject1
 {
     [TestClass]
-    class RemoveMethod
+    public class RemoveMethod
     {
         
         [TestMethod]
@@ -69,7 +69,7 @@ namespace UnitTestProject1
         {
             CustomList<int> customList = new CustomList<int>();
             bool expected = false;
-            int actual;
+            bool actual;
 
             //Act
            
@@ -84,7 +84,7 @@ namespace UnitTestProject1
         {
             CustomList<int> customList = new CustomList<int>();
             bool expected = false;
-            int actual;
+            bool actual;
 
             //Act
             customList.Add(5);

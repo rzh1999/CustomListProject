@@ -14,7 +14,8 @@ namespace CustomListProj
         private T[] items;
         private int count;
         private int capacity;
-       
+        public int Count { get { return count; } }
+        public int Capacity { get { return capacity;  } }
         public CustomList()
         {
             count = 0;
@@ -26,7 +27,7 @@ namespace CustomListProj
         {
             get
             {
-                if (index < 0 && index >= items.Length)
+                if (index < 0 && index >= count)
                 throw new IndexOutOfRangeException("Index out of range");
 
                 return items[index];
@@ -34,7 +35,7 @@ namespace CustomListProj
 
             set
             {
-                if (index < 0 || index >= items.Length)
+                if (index < 0 || index >= count)
                     throw new IndexOutOfRangeException("Index out of range");
 
                 items[index] = value;
