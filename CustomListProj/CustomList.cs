@@ -66,12 +66,38 @@ namespace CustomListProj
 
         public bool Remove(T item)
         {
-            Console.WriteLine($"Inside Remove() {items.Length}");
-            for (int i = 0; i <= count; i++)
+            int flag = 0;
+            T[] temp = new T[capacity];
+            for (int i = 0, j = 0; i < count; i++, j++)
             {
-                //do somethoing
+               if(!Equals(items[i], item))
+                {
+                    temp[j] = items[i];
+                }
+                else
+                {
+                    j--;
+                    flag = 1;
+                }
+               
             }
-            return true;
+
+            for (int i = 0; i < count - 1; i++)
+            {
+                items[i] = temp[i];
+            }
+
+            count--;
+      
+            if (flag == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
     }

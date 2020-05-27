@@ -31,7 +31,9 @@ namespace CustomListProj
             customList.Add(15);
             customList.Add(16);
             customList.Add(17);
-            customList.Remove(3);
+            bool result;
+            result = customList.Remove(3);
+            Console.WriteLine($"Results from remove {result}");
 
             Console.WriteLine(customList[0]);
             Console.WriteLine(customList[1]);
@@ -51,6 +53,8 @@ namespace CustomListProj
             Console.WriteLine(customList[15]);
             Console.WriteLine(customList[16]);
 
+
+           
             Console.ReadLine();
 
         }
