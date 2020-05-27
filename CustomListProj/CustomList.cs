@@ -42,26 +42,37 @@ namespace CustomListProj
         }
         public void Add(T item)
         {
-            T[] temp = new T[capacity];
-            
+            if (count >= capacity)
+            {
+                T[] temp = new T[capacity];
+
                 for (int i = 0; i < count; i++)
                 {
-                    temp[i] = items[i];    
+                    temp[i] = items[i];
                 }
-                
+
                 items = new T[capacity *= 2];
-               
+
                 for (int i = 0; i < count; i++)
                 {
                     items[i] = temp[i];
                 }
-
+            }
                 items[count] = item;
                 
                 count++;
+           
         }
 
-
+        public bool Remove(T item)
+        {
+            Console.WriteLine($"Inside Remove() {items.Length}");
+            for (int i = 0; i <= count; i++)
+            {
+                //do somethoing
+            }
+            return true;
+        }
 
     }
 }

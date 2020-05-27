@@ -31,6 +31,7 @@ namespace CustomListProj
             customList.Add(15);
             customList.Add(16);
             customList.Add(17);
+            customList.Remove(3);
 
             Console.WriteLine(customList[0]);
             Console.WriteLine(customList[1]);
