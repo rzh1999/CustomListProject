@@ -26,16 +26,16 @@ namespace CustomListProj
         {
             get
             {
-                //if (index < 0 && index >= items.Length)
-                    //throw new IndexOutOfRangeException("Index out of range");
+                if (index < 0 && index >= items.Length)
+                throw new IndexOutOfRangeException("Index out of range");
 
                 return items[index];
             }
 
             set
             {
-                //if (index < 0 || index >= items.Length)
-                //    throw new IndexOutOfRangeException("Index out of range");
+                if (index < 0 || index >= items.Length)
+                    throw new IndexOutOfRangeException("Index out of range");
 
                 items[index] = value;
             }
@@ -44,19 +44,6 @@ namespace CustomListProj
         {
             T[] temp = new T[capacity];
             
-            //inserting into the array
-            //if (count == 0)
-            //{
-            //    items[count] = item;
-            //    count++;
-            //}
-            //else if (count > 0 && count < 4)
-            //{
-            //    items[count] = item;
-            //    count++;
-            //}
-            //else if (count >= 4 && items.Length >=4)
-            //{
                 for (int i = 0; i < count; i++)
                 {
                     temp[i] = items[i];    
@@ -72,7 +59,6 @@ namespace CustomListProj
                 items[count] = item;
                 
                 count++;
-            //}
         }
 
 
