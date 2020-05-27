@@ -45,36 +45,21 @@ namespace CustomListProj
             T[] temp = new T[capacity];
             
             //inserting into the array
-            if (count == 0)
-            {
-                items[count] = item;
-                count++;
-            }
-            else if (count > 0 && count < 4)
-            {
-                items[count] = item;
-                count++;
-            }
-            else if (count >= 4 && items.Length >=4)
-            {
-
-               
-
-                //foreach (T element in items)
-                //{
-                //    temp[index] = element;
-                //   //if (items.Length > 5)
-                //   // {
-                //   //     temp[index] = element;
-                //   // }
-                //    index++;
-
-                //}
+            //if (count == 0)
+            //{
+            //    items[count] = item;
+            //    count++;
+            //}
+            //else if (count > 0 && count < 4)
+            //{
+            //    items[count] = item;
+            //    count++;
+            //}
+            //else if (count >= 4 && items.Length >=4)
+            //{
                 for (int i = 0; i < count; i++)
                 {
-                    temp[i] = items[i];
-                    
-                    
+                    temp[i] = items[i];    
                 }
                 
                 items = new T[capacity *= 2];
@@ -82,22 +67,12 @@ namespace CustomListProj
                 for (int i = 0; i < count; i++)
                 {
                     items[i] = temp[i];
-                   
                 }
-                items[count] = item;
-                //foreach(T elements in temp)
-                //{
-                //    items[copyIndex] = elements;
-                //    copyIndex++;
-                //}
-                // items[copyIndex] = item;
-                //copyIndex++;
-                count++;
-            }
-            //if count and capacity are equal
-            //then increase capacity
-            //copy values over to new array
 
+                items[count] = item;
+                
+                count++;
+            //}
         }
 
 
