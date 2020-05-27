@@ -13,6 +13,15 @@ namespace UnitTestProject1
     public class RemoveMethod
     {
         
+       private class Bill
+        {
+            public string name;
+
+            public Bill()
+            {
+                name = "bill";
+            }
+        }
         [TestMethod]
         public void Remove_RemoveOnlyItemFromList_CountShouldBeZero()
         {
@@ -39,6 +48,38 @@ namespace UnitTestProject1
             //Act
             customList.Add(3);
             actual = customList.Remove(3);
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_RemoveStringFromList_ReturnEqualTrue()
+        {
+            CustomList<string> customList = new CustomList<string>();
+            bool expected = true;
+            bool actual;
+
+            //Act
+            customList.Add("bill");
+            actual = customList.Remove("bill");
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_RemoveObjectFromList_ReturnEqualTrue()
+        {
+            CustomList<Bill> customList = new CustomList<Bill>();
+            bool expected = true;
+            bool actual;
+            Bill bill = new Bill();
+            //Act
+            customList.Add(bill);
+            customList.Add(bill);
+
+            actual = customList.Remove(bill);
 
 
             //Assert
