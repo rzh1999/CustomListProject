@@ -45,22 +45,6 @@ namespace UnitTestProject1
 
             Assert.AreEqual(actual, expected);
         }
-        [TestMethod]
-        public void Tostring_NullString_StringEqualsNull()
-        {
-            CustomList<string> customList = new CustomList<string>();
-
-            string nullTest = null;
-
-            customList.Add(nullTest);
-
-            string expected = null;
-            string actual;
-
-            actual = customList.ToString();
-
-            Assert.AreEqual(actual, expected);
-        }
 
         [TestMethod]
         public void Tostring_ThreeNumbers_StringsEqual()

@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bill.cs" />
+    <Compile Include="Hine.cs" />
     <Compile Include="IEnumerableTest.cs" />
     <Compile Include="OverLoadPlus.cs" />
     <Compile Include="RemoveMethod.cs" />

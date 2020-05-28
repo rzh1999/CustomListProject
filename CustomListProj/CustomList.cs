@@ -16,7 +16,7 @@ namespace CustomListProj
         private int count;
         private int capacity;
         public int Count { get { return count; } }
-        public int Capacity { get { return capacity;  } }
+        public int Capacity { get { return capacity;  } set { capacity = value; } }
         public CustomList()
         {
             count = 0;
