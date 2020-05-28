@@ -111,5 +111,19 @@ namespace CustomListProj
             yield return "Finished Iterating";
         }
 
+        public override string ToString()
+        {
+            StringBuilder returnString = new StringBuilder();
+            for (int i = 0; i < count; i++)
+            {
+                if (items[i] != null)
+                {
+                    returnString.Append(items[i].ToString());
+                }
+            }
+            return returnString.ToString();
+        }
+
+       
     }
 }

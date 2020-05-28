@@ -13,15 +13,7 @@ namespace UnitTestProject1
     public class RemoveMethod
     {
         
-       private class Bill
-        {
-            public string name;
-
-            public Bill()
-            {
-                name = "bill";
-            }
-        }
+      
         [TestMethod]
         public void Remove_RemoveOnlyItemFromList_CountShouldBeZero()
         {
