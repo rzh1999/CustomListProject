@@ -24,9 +24,9 @@ namespace UnitTestProject1
             customList.Add(3);
             customList.Add(2);
 
-            foreach (int number in customList)
+            for (int i =0; i < customList.Count; i++)
             {
-                actual += number;
+                actual += customList[i];
             }
 
             //Assert
