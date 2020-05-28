@@ -26,11 +26,12 @@ namespace UnitTestProject1
             listTwo.Add(6);
 
             string expected = "123456";
-            string actual;
+            CustomList<int> actual;
 
-            actual = listOne.ToString() + listTwo.ToString();
+            actual = listOne + listTwo;
+            
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual.ToString());
         }
 
         [TestMethod]
@@ -48,30 +49,9 @@ namespace UnitTestProject1
             listTwo.Add("6");
 
             string expected = "123456";
-            string actual;
+            CustomList<string> actual;
 
-            actual = listOne.ToString() + listTwo.ToString();
-
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void PlusOverLoad_ListOfIntAndListOfString_SetsShouldMerge()
-        {
-            CustomList<int> listOne = new CustomList<int>();
-            CustomList<string> listTwo = new CustomList<string>();
-
-            listOne.Add(1);
-            listOne.Add(2);
-            listOne.Add(3);
-
-            listTwo.Add("one");
-            listTwo.Add("two");
-            listTwo.Add("three");
-
-            string expected = "123onetwothree";
-            string actual;
-
-            actual = listOne.ToString() + listTwo.ToString();
+            actual = listOne + listTwo;
 
             Assert.AreEqual(expected, actual);
         }
@@ -91,30 +71,52 @@ namespace UnitTestProject1
             listTwo.Add(6.0);
 
             string expected = "1.02.03.04.05.06.0";
-            string actual;
+            CustomList<double> actual;
 
-            actual = listOne.ToString() + listTwo.ToString();
+            actual = listOne + listTwo;
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual.ToString());
         }
 
         [TestMethod]
         public void PlusOverLoad_ListOfObjects_SetsShouldMerge()
         {
             Bill bill = new Bill();
-            Hine hine = new Hine();
+            Bill hine = new Bill();
 
             CustomList<Bill> listOne = new CustomList<Bill>();
-            CustomList<Hine> listTwo = new CustomList<Hine>();
+            CustomList<Bill> listTwo = new CustomList<Bill>();
 
             listOne.Add(bill);
             
             listTwo.Add(hine);
 
-            string expected = bill.name + hine.name;
-            string actual;
+            string expected = bill.name + hine.name; 
+            CustomList<Bill> actual;
 
-            actual = listOne[0].name.ToString() + listTwo[0].name.ToString();
+            actual = listOne + listTwo;
+            string actualResult = actual[0].name + actual[1].name;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void PlusOverLoad_ListOfChars_SetsShouldMerge()
+        {
+            CustomList<char> listOne = new CustomList<char>();
+            CustomList<char> listTwo = new CustomList<char>();
+
+            listOne.Add('q');
+            listOne.Add('u');
+            listOne.Add('a');
+            listOne.Add('r');
+
+            listTwo.Add('k');
+
+            string expected = "quark";
+            CustomList<Bill> actual;
+
+            actual = listOne + listTwo;
+          
 
             Assert.AreEqual(expected, actual);
         }
