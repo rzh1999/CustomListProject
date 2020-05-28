@@ -26,6 +26,27 @@ namespace UnitTestProject1
             Assert.AreEqual(actual, expected);
         }
 
+        //Waiting on mike
+        //[TestMethod]
+        //public void Tostring_FourStrings_AllStringsEqual()
+        //{
+        //    CustomList<string> customList = new CustomList<string>();
+
+        //    customList.Add("Bill");
+        //    customList.Add("needs");
+        //    customList.Add("more");
+        //    customList.Add("work");
+
+        //    string expected = "Bill, needs, more, work";
+        //    string actual;
+
+           
+        //    actual = customList.ToString();
+
+          
+        //    Assert.AreEqual(actual, expected);
+        //}
+
         [TestMethod]
         public void Tostring_FourStrings_AllStringsEqual()
         {
@@ -36,29 +57,15 @@ namespace UnitTestProject1
             customList.Add("more");
             customList.Add("work");
 
-            string expectedBill = "Bill";
-            string actual1;
+            string expected = "Billneedsmorework";
+            string actual;
 
-            string expectedNeeds = "needs";
-            string actual2;
 
-            string expectedMore = "more";
-            string actual3;
+            actual = customList.ToString();
 
-            string expectedWork = "work";
-            string actual4;
 
-            actual1 = customList.ToString();
-            actual2 = customList.ToString();
-            actual3 = customList.ToString();
-            actual4 = customList.ToString();
-
-            Assert.AreEqual(actual1, expectedBill);
-            Assert.AreEqual(actual2, expectedNeeds);
-            Assert.AreEqual(actual3, expectedMore);
-            Assert.AreEqual(actual4, expectedWork);
+            Assert.AreEqual(actual, expected);
         }
-        
         [TestMethod]
         public void Tostring_NullString_StringEqualsNull()
         {
