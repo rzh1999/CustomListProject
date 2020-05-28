@@ -58,7 +58,7 @@ namespace UnitTestProject1
             Assert.AreEqual(actual3, expectedMore);
             Assert.AreEqual(actual4, expectedWork);
         }
-
+        
         [TestMethod]
         public void Tostring_NullString_StringEqualsNull()
         {
