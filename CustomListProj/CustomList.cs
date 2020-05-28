@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom.Compiler;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProj
 {
-    public class  CustomList<T>
+    public class  CustomList<T> : IEnumerable
     {
        
         private T[] items;
@@ -99,6 +100,15 @@ namespace CustomListProj
                 return false;
             }
             
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+               yield return items[i];
+            }
+            yield return "Finished Iterating";
         }
 
     }
