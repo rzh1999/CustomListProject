@@ -65,7 +65,7 @@ namespace UnitTestProject1
             CustomList<string> stringOne = new CustomList<string>();
             CustomList<string> stringTwo = new CustomList<string>();
 
-            string expected = "ABCDEFGH";
+            string expected = "ADBECFGH";
             CustomList<int> actual;
 
             stringOne.Add("A");
@@ -102,7 +102,7 @@ namespace UnitTestProject1
             stringTwo.Add(white);
 
             actual = stringOne.Zip(stringTwo);
-
+            string actualresult = actual[0].name + actual[1].name + actual[2].name;
             Assert.AreEqual(expected, actual.ToString());
 
         }
