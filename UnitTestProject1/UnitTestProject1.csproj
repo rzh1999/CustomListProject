@@ -52,6 +52,7 @@
     <Compile Include="Bill.cs" />
     <Compile Include="Hine.cs" />
     <Compile Include="IEnumerableTest.cs" />
+    <Compile Include="OverLoadMinus.cs" />
     <Compile Include="OverLoadPlus.cs" />
     <Compile Include="RemoveMethod.cs" />
     <Compile Include="ToStringTest.cs" />

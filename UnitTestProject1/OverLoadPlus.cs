@@ -9,116 +9,137 @@ using CustomListProj;
 namespace UnitTestProject1
 {
     [TestClass]
-    class OverLoadPlus
+    public class OverLoadPlus
     {
-        //[TestMethod]
-        //public void PlusOverLoad_ListOfTwoSetsOfNumbers_SetsShouldMerge()
-        //{
-        //    CustomList<int> listOne = new CustomList<int>();
-        //    CustomList<int> listTwo = new CustomList<int>();
+        [TestMethod]
+        public void PlusOverLoad_ListOfTwoSetsOfNumbers_SetsShouldMerge()
+        {
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
 
-        //    listOne.Add(1);
-        //    listOne.Add(2);
-        //    listOne.Add(3);
+            listOne.Add(1);
+            listOne.Add(2);
+            listOne.Add(3);
 
-        //    listTwo.Add(4);
-        //    listTwo.Add(5);
-        //    listTwo.Add(6);
+            listTwo.Add(4);
+            listTwo.Add(5);
+            listTwo.Add(6);
 
-        //    string expected = "123456";
-        //    CustomList<int> actual;
+            string expected = "123456";
+            CustomList<int> actual;
 
-        //    actual = listOne + listTwo;
-            
+            actual = listOne + listTwo;
 
-        //    Assert.AreEqual(expected, actual.ToString());
-        //}
 
-        //[TestMethod]
-        //public void PlusOverLoad_ListOfTwoSetsOfStrings_SetsShouldMerge()
-        //{
-        //    CustomList<string> listOne = new CustomList<string>();
-        //    CustomList<string> listTwo = new CustomList<string>();
+            Assert.AreEqual(expected, actual.ToString());
+        }
+        [TestMethod]
+        public void PlusOverLoad_ListOfTwoSetsOfNumbers_CountShouldEqualSix()
+        {
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
 
-        //    listOne.Add("1");
-        //    listOne.Add("2");
-        //    listOne.Add("3");
+            listOne.Add(1);
+            listOne.Add(2);
+            listOne.Add(3);
 
-        //    listTwo.Add("4");
-        //    listTwo.Add("5");
-        //    listTwo.Add("6");
+            listTwo.Add(4);
+            listTwo.Add(5);
+            listTwo.Add(6);
 
-        //    string expected = "123456";
-        //    CustomList<string> actual;
+            int expected = 6;
+            CustomList<int> actual;
 
-        //    actual = listOne + listTwo;
+            actual = listOne + listTwo;
+            int count = actual.Count;
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, count);
+        }
+        [TestMethod]
+        public void PlusOverLoad_ListOfTwoSetsOfStrings_SetsShouldMerge()
+        {
+            CustomList<string> listOne = new CustomList<string>();
+            CustomList<string> listTwo = new CustomList<string>();
 
-        //[TestMethod]
-        //public void PlusOverLoad_ListOfDoubles_SetsShouldMerge()
-        //{
-        //    CustomList<double> listOne = new CustomList<double>();
-        //    CustomList<double> listTwo = new CustomList<double>();
+            listOne.Add("1");
+            listOne.Add("2");
+            listOne.Add("3");
 
-        //    listOne.Add(1.0);
-        //    listOne.Add(2.0);
-        //    listOne.Add(3.0);
+            listTwo.Add("4");
+            listTwo.Add("5");
+            listTwo.Add("6");
 
-        //    listTwo.Add(4.0);
-        //    listTwo.Add(5.0);
-        //    listTwo.Add(6.0);
+            string expected = "123456";
+            CustomList<string> actual;
 
-        //    string expected = "1.02.03.04.05.06.0";
-        //    CustomList<double> actual;
+            actual = listOne + listTwo;
 
-        //    actual = listOne + listTwo;
+            Assert.AreEqual(expected, actual.ToString());
+        }
 
-        //    Assert.AreEqual(expected, actual.ToString());
-        //}
+        [TestMethod]
+        public void PlusOverLoad_ListOfDoubles_SetsShouldMerge()
+        {
+            CustomList<double> listOne = new CustomList<double>();
+            CustomList<double> listTwo = new CustomList<double>();
 
-        //[TestMethod]
-        //public void PlusOverLoad_ListOfObjects_SetsShouldMerge()
-        //{
-        //    Bill bill = new Bill();
-        //    Bill hine = new Bill();
+            listOne.Add(1.3);
+            listOne.Add(2.3);
+            listOne.Add(3.3);
 
-        //    CustomList<Bill> listOne = new CustomList<Bill>();
-        //    CustomList<Bill> listTwo = new CustomList<Bill>();
+            listTwo.Add(4.3);
+            listTwo.Add(5.3);
+            listTwo.Add(6.3);
 
-        //    listOne.Add(bill);
-            
-        //    listTwo.Add(hine);
+            string expected = "1.32.33.34.35.36.3";
+            CustomList<double> actual;
 
-        //    string expected = bill.name + hine.name; 
-        //    CustomList<Bill> actual;
+            actual = listOne + listTwo;
 
-        //    actual = listOne + listTwo;
-        //    string actualResult = actual[0].name + actual[1].name;
+            Assert.AreEqual(expected, actual.ToString());
+        }
 
-        //    Assert.AreEqual(expected, actual);
-        //}
-        //[TestMethod]
-        //public void PlusOverLoad_ListOfChars_SetsShouldMerge()
-        //{
-        //    CustomList<char> listOne = new CustomList<char>();
-        //    CustomList<char> listTwo = new CustomList<char>();
+        [TestMethod]
+        public void PlusOverLoad_ListOfObjects_SetsShouldMerge()
+        {
+            Bill bill = new Bill();
+            Bill hine = new Bill();
 
-        //    listOne.Add('q');
-        //    listOne.Add('u');
-        //    listOne.Add('a');
-        //    listOne.Add('r');
+            CustomList<Bill> listOne = new CustomList<Bill>();
+            CustomList<Bill> listTwo = new CustomList<Bill>();
 
-        //    listTwo.Add('k');
+            listOne.Add(bill);
 
-        //    string expected = "quark";
-        //    CustomList<Bill> actual;
+            listTwo.Add(hine);
 
-        //    actual = listOne + listTwo;
-          
+            string expected = bill.name + hine.name;
+            CustomList<Bill> actual;
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            actual = listOne + listTwo;
+            string actualResult = actual[0].name + actual[1].name;
+
+            Assert.AreEqual(expected, actualResult.ToString());
+        }
+        [TestMethod]
+        public void PlusOverLoad_ListOfChars_SetsShouldMerge()
+        {
+            CustomList<char> listOne = new CustomList<char>();
+            CustomList<char> listTwo = new CustomList<char>();
+
+            listOne.Add('q');
+            listOne.Add('u');
+            listOne.Add('a');
+            listOne.Add('r');
+
+            listTwo.Add('k');
+
+            string expected = "quark";
+            CustomList<char> actual;
+
+            actual = listOne + listTwo;
+
+
+            Assert.AreEqual(expected, actual.ToString());
+        }
     }
 }

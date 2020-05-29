@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CustomListProj
@@ -104,7 +105,7 @@ namespace CustomListProj
 
         public IEnumerator GetEnumerator()
         {
-            for (int i = 0; i < items.Length; i++)
+            for (int i = 0; i < count; i++)
             {
                yield return items[i];
             }
@@ -124,6 +125,36 @@ namespace CustomListProj
             return returnString.ToString();
         }
 
-       
+        public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+           CustomList<T> temp = new CustomList<T>();
+
+           for(int i =0; i < listOne.Count; i++)
+            {
+                temp.Add(listOne[i]);
+            }
+
+           for (int i = 0; i < listTwo.Count; i++)
+            {
+                temp.Add(listTwo[i]);
+            }
+            return temp;
+        }
+
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> temp = new CustomList<T>();
+
+            for (int i = 0; i < listOne.Count; i++)
+            {
+                temp.Add(listOne[i]);
+            }
+
+            for (int i = 0; i < listTwo.Count; i++)
+            {
+                temp.Add(listTwo[i]);
+            }
+            return temp;
+        }
     }
 }
