@@ -143,18 +143,28 @@ namespace CustomListProj
 
         public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
         {
-            CustomList<T> temp = new CustomList<T>();
-
-            for (int i = 0; i < listOne.Count; i++)
+            int countToUse;
+            if (listOne.Count > listTwo.Count)
             {
-                temp.Add(listOne[i]);
+                countToUse = listOne.Count;
+            }
+            else
+            {
+                countToUse = listTwo.Count;
             }
 
-            for (int i = 0; i < listTwo.Count; i++)
+            for (int i = 0; i < countToUse; i++)
             {
-                temp.Add(listTwo[i]);
+                for (int j = 0; j < listTwo.Count; j++)
+                {
+                    if (Equals(listOne[i], listTwo[j]))
+                    {
+                        listOne.Remove(listOne[i]);
+                    }
+                }
             }
-            return temp;
+
+            return listOne;
         }
     }
 }
