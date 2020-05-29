@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace CustomListProj
 {
-    public class  CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable
     {
-       
+
         private T[] items;
         private int count;
         private int capacity;
         public int Count { get { return count; } }
-        public int Capacity { get { return capacity;  } set { capacity = value; } }
+        public int Capacity { get { return capacity; } set { capacity = value; } }
         public CustomList()
         {
             count = 0;
@@ -30,7 +30,7 @@ namespace CustomListProj
             get
             {
                 if (index < 0 && index >= count)
-                throw new IndexOutOfRangeException("Index out of range");
+                    throw new IndexOutOfRangeException("Index out of range");
 
                 return items[index];
             }
@@ -61,10 +61,10 @@ namespace CustomListProj
                     items[i] = temp[i];
                 }
             }
-                items[count] = item;
-                
-                count++;
-           
+            items[count] = item;
+
+            count++;
+
         }
 
         public bool Remove(T item)
@@ -73,7 +73,7 @@ namespace CustomListProj
             T[] temp = new T[capacity];
             for (int i = 0, j = 0; i < count; i++, j++)
             {
-               if(!Equals(items[i], item))
+                if (!Equals(items[i], item))
                 {
                     temp[j] = items[i];
                 }
@@ -82,7 +82,7 @@ namespace CustomListProj
                     j--;
                     flag = 1;
                 }
-               
+
             }
 
             for (int i = 0; i < count - 1; i++)
@@ -91,7 +91,7 @@ namespace CustomListProj
             }
 
             count--;
-      
+
             if (flag == 1)
             {
                 return true;
@@ -100,14 +100,14 @@ namespace CustomListProj
             {
                 return false;
             }
-            
+
         }
 
         public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < count; i++)
             {
-               yield return items[i];
+                yield return items[i];
             }
             yield return "Finished Iterating";
         }
@@ -127,14 +127,14 @@ namespace CustomListProj
 
         public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
         {
-           CustomList<T> temp = new CustomList<T>();
+            CustomList<T> temp = new CustomList<T>();
 
-           for(int i =0; i < listOne.Count; i++)
+            for (int i = 0; i < listOne.Count; i++)
             {
                 temp.Add(listOne[i]);
             }
 
-           for (int i = 0; i < listTwo.Count; i++)
+            for (int i = 0; i < listTwo.Count; i++)
             {
                 temp.Add(listTwo[i]);
             }
@@ -165,6 +165,68 @@ namespace CustomListProj
             }
 
             return listOne;
+        }
+
+      public CustomList<T> Zip(CustomList<T> listTwo)
+        {
+            CustomList<T> temp = new CustomList<T>();
+
+            int countToUse;
+            if (count < listTwo.Count)
+            {
+                for (int i = 0; i < listTwo.count; i++)
+                {
+                 
+                    if (i < count)
+                    {
+                     
+                            temp.Add(items[i]);
+                      
+                    }
+                  
+                    temp.Add(listTwo[i]); 
+
+                }
+            }
+            else
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    
+                   
+                       
+                            temp.Add(items[i]);
+                      
+                   
+                   
+                    if(listTwo.count > i)
+                    {
+                        temp.Add(listTwo[i]);
+                    }
+                  
+
+                }
+            }
+
+            
+
+            //for (int i = 0; i < countToUse; i++)
+            //{
+            //    if(countToUse < count)
+            //    {
+            //        temp.Add(items[i]);
+            //    }
+            //    else
+            //    {
+            //        temp.Add(listTwo[i]);
+            //    }
+            //}
+            //for (int i = 0, j = 0; i < count; i++, j++)
+            //{
+
+
+            //}
+            return temp;
         }
     }
 }

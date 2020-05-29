@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bill.cs" />
+    <Compile Include="Color.cs" />
     <Compile Include="Hine.cs" />
     <Compile Include="IEnumerableTest.cs" />
     <Compile Include="OverLoadMinus.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="ToStringTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZipTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

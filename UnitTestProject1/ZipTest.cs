@@ -9,7 +9,7 @@ using CustomListProj;
 namespace UnitTestProject1
 {
     [TestClass]
-    class ZipTest
+    public class ZipTest
     {
         [TestMethod]
         public void Zip_ZipIntergers_ShouldBeZipped()
@@ -42,8 +42,8 @@ namespace UnitTestProject1
             CustomList<string> stringOne = new CustomList<string>();
             CustomList<string> stringTwo = new CustomList<string>();
 
-            string expected = "ABCDEF";
-            CustomList<int> actual;
+            string expected = "ADBECF";
+            CustomList<string> actual;
 
             stringOne.Add("A");
             stringOne.Add("B");
@@ -66,7 +66,7 @@ namespace UnitTestProject1
             CustomList<string> stringTwo = new CustomList<string>();
 
             string expected = "ADBECFGH";
-            CustomList<int> actual;
+            CustomList<string> actual;
 
             stringOne.Add("A");
             stringOne.Add("B");
@@ -79,8 +79,9 @@ namespace UnitTestProject1
             stringTwo.Add("H");
 
             actual = stringOne.Zip(stringTwo);
-
+            
             Assert.AreEqual(expected, actual.ToString());
+           
 
         }
         [TestMethod]
@@ -94,7 +95,7 @@ namespace UnitTestProject1
             CustomList<Color> stringTwo = new CustomList<Color>();
 
             string expected = "redwhiteblue";
-            CustomList<int> actual;
+            CustomList<Color> actual;
 
             stringOne.Add(red);
             stringOne.Add(blue);
@@ -102,8 +103,8 @@ namespace UnitTestProject1
             stringTwo.Add(white);
 
             actual = stringOne.Zip(stringTwo);
-            string actualresult = actual[0].name + actual[1].name + actual[2].name;
-            Assert.AreEqual(expected, actual.ToString());
+            string actualResult = actual[0].name + actual[1].name + actual[2].name;
+            Assert.AreEqual(expected, actualResult.ToString());
 
         }
         [TestMethod]
@@ -114,7 +115,7 @@ namespace UnitTestProject1
             CustomList<double> doubleTwo = new CustomList<double>();
 
             string expected = "1.12.13.14.15.16.1";
-            CustomList<int> actual;
+            CustomList<double> actual;
 
             doubleOne.Add(1.1);
             doubleOne.Add(3.1);
@@ -125,6 +126,32 @@ namespace UnitTestProject1
             doubleTwo.Add(6.1);
 
             actual = doubleOne.Zip(doubleTwo);
+
+            Assert.AreEqual(expected, actual.ToString());
+
+        }
+        [TestMethod]
+        public void Zip_ZipFirstSetBigger_ShouldBeZipped()
+        {
+            //Arrange
+            CustomList<string> stringOne = new CustomList<string>();
+            CustomList<string> stringTwo = new CustomList<string>();
+
+            string expected = "ADBECFEEE";
+            CustomList<string> actual;
+
+            stringOne.Add("A");
+            stringOne.Add("B");
+            stringOne.Add("C");
+            stringOne.Add("E");
+            stringOne.Add("E");
+            stringOne.Add("E");
+
+            stringTwo.Add("D");
+            stringTwo.Add("E");
+            stringTwo.Add("F");
+
+            actual = stringOne.Zip(stringTwo);
 
             Assert.AreEqual(expected, actual.ToString());
 
