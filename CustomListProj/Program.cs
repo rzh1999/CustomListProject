@@ -10,51 +10,30 @@ namespace CustomListProj
     {
         static void Main(string[] args)
         {
-            CustomList<int> customList = new CustomList<int>();
-            //customList[0] = 2;
-            //customList[1] = 3;
+       
+        //Create new instance of "type" in this case int to be searched
+        CustomList<int> intList = new CustomList<int>();
 
-            customList.Add(1);
-            customList.Add(2);
-            customList.Add(3);
-            customList.Add(4);
-            customList.Add(5);
-            customList.Add(6);
-            customList.Add(7);
-            customList.Add(8);
-            customList.Add(9);
-            customList.Add(10);
-            customList.Add(11);
-            customList.Add(12);
-            customList.Add(13);
-            customList.Add(14);
-            customList.Add(15);
-            customList.Add(16);
-            customList.Add(17);
-            bool result;
-            result = customList.Remove(3);
-            Console.WriteLine($"Results from remove {result}");
+        //Create new instance of "type" in this case int for your query
+        CustomList<int> search = new CustomList<int>();
 
-            Console.WriteLine(customList[0]);
-            Console.WriteLine(customList[1]);
-            Console.WriteLine(customList[2]);
-            Console.WriteLine(customList[3]);
-            Console.WriteLine(customList[4]);
-            Console.WriteLine(customList[5]);
-            Console.WriteLine(customList[6]);
-            Console.WriteLine(customList[7]);
-            Console.WriteLine(customList[8]);
-            Console.WriteLine(customList[9]);
-            Console.WriteLine(customList[10]);
-            Console.WriteLine(customList[11]);
-            Console.WriteLine(customList[12]);
-            Console.WriteLine(customList[13]);
-            Console.WriteLine(customList[14]);
-            Console.WriteLine(customList[15]);
-            Console.WriteLine(customList[16]);
+        //Add items to list to be searched
+        intList.Add(1);
+        intList.Add(3);
+        intList.Add(5);
 
+        //Add items for your query
+        search.Add(2);
+        search.Add(1);
+        search.Add(6);
 
-           
+        //Create list to hold results
+        CustomList<int> results;
+
+        results = intList - search;
+
+        Console.WriteLine(results.ToString());
+        
             Console.ReadLine();
 
         }
