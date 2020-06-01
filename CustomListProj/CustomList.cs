@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProj
 {
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable, IComparable
     {
 
         private T[] items;
@@ -176,57 +176,28 @@ namespace CustomListProj
             {
                 for (int i = 0; i < listTwo.count; i++)
                 {
-                 
                     if (i < count)
-                    {
-                     
-                            temp.Add(items[i]);
-                      
+                    {    
+                            temp.Add(items[i]); 
                     }
-                  
                     temp.Add(listTwo[i]); 
-
                 }
             }
             else
             {
                 for (int i = 0; i < count; i++)
                 {
-                    
-                   
-                       
-                            temp.Add(items[i]);
-                      
-                   
-                   
+                    temp.Add(items[i]); 
                     if(listTwo.count > i)
                     {
                         temp.Add(listTwo[i]);
                     }
-                  
-
                 }
             }
 
-            
-
-            //for (int i = 0; i < countToUse; i++)
-            //{
-            //    if(countToUse < count)
-            //    {
-            //        temp.Add(items[i]);
-            //    }
-            //    else
-            //    {
-            //        temp.Add(listTwo[i]);
-            //    }
-            //}
-            //for (int i = 0, j = 0; i < count; i++, j++)
-            //{
-
-
-            //}
             return temp;
         }
+
+      
     }
 }
